@@ -1,4 +1,4 @@
-import main.java.HashMap.HashMapImp;
+import HashMap.HashMapImp;
 
 import java.util.Arrays;
 

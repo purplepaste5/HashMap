@@ -1,6 +1,6 @@
-package main.java.HashMap;
+package HashMap;
 
-public class HashMapImp implements HashMapInt{
+public class HashMapImp implements HashMapInt {
     static final int CAPACITY = 16;
     Object[] map = new Object[CAPACITY];
 
