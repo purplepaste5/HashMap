@@ -1,4 +1,4 @@
-package HashMap;
+package main;
 
 public class HashMapImp implements HashMapInt{
     static final int CAPACITY = 16;
@@ -24,6 +24,10 @@ public class HashMapImp implements HashMapInt{
         int hash = createHash(key);
         return map[hash % CAPACITY];
 
+    }
+
+    public Object[] getMap() {
+        return map;
     }
 
     private int createHash(String key) {
