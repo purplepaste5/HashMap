@@ -21,7 +21,9 @@ public class HashMapImp implements HashMapInt{
 
     @Override
     public Object get(String key) {
-        return null;
+        int hash = createHash(key);
+        return map[hash % CAPACITY];
+
     }
 
     private int createHash(String key) {
