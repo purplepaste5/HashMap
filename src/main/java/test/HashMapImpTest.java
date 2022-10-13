@@ -1,6 +1,6 @@
 package test;
 
-import main.java.HashMap.HashMapImp;
+import HashMap.HashMapImp;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
