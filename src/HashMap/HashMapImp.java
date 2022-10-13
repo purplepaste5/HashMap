@@ -15,8 +15,8 @@ public class HashMapImp implements HashMapInt{
     @Override
     public boolean remove(String key) {
         int hash = createHash(key);
-
-        return false;
+        map[hash % CAPACITY] = null;
+        return true;
     }
 
     @Override
