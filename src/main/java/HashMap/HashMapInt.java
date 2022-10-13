@@ -1,4 +1,4 @@
-package main;
+package main.java.HashMap;
 
 public interface HashMapInt {
 

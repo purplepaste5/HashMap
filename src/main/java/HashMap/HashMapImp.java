@@ -1,4 +1,4 @@
-package main;
+package main.java.HashMap;
 
 public class HashMapImp implements HashMapInt{
     static final int CAPACITY = 16;
