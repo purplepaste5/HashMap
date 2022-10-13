@@ -2,12 +2,13 @@ package HashMap;
 
 public class HashMapImp implements HashMapInt {
     static final int CAPACITY = 16;
-    Object[] map = new Object[CAPACITY];
+    HashMapNode[] nodeMap = new HashMapNode[CAPACITY];
 
     @Override
     public Object add(String key, Object object) {
         int hash = createHash(key);
-        map[hash % CAPACITY] = object;
+        HashMapNode node = new HashMapNode(key, object, hash);
+        nodeMap[hash % CAPACITY] = node;
 
         return object;
     }
@@ -15,19 +16,31 @@ public class HashMapImp implements HashMapInt {
     @Override
     public boolean remove(String key) {
         int hash = createHash(key);
-        map[hash % CAPACITY] = null;
-        return true;
+        HashMapNode nodeCheck = nodeMap[hash % CAPACITY];
+        if (nodeCheck.getKey().equals(key)) {
+            nodeMap[hash % CAPACITY] = null;
+            return true;
+        } else {
+            // loop through the next ones to try to find it and if not return false
+            return false;
+        }
     }
 
     @Override
     public Object get(String key) {
         int hash = createHash(key);
-        return map[hash % CAPACITY];
+        HashMapNode nodeCheck = nodeMap[hash % CAPACITY];
+        if (nodeCheck.getKey().equals(key)) {
+            return nodeCheck.getObject();
+        } else {
+            // loop through the next ones to try to find it and if not return false
+            return null;
+        }
 
     }
 
-    public Object[] getMap() {
-        return map;
+    public HashMapNode[] getMap() {
+        return nodeMap;
     }
 
     private int createHash(String key) {
